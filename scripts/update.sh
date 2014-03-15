@@ -12,4 +12,5 @@ done
 
 source ./env/bin/activate
 frappe --latest all --sites_path sites
+frappe --build --sites_path sites
 echo "Please restart all processes"
