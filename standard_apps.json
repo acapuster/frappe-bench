@@ -1,7 +1,12 @@
 [
   {
+    "name": "frappe",
+    "url": "https://github.com/frappe/frappe.git",
+	"tag": "v4-beta2"
+  },{
     "name": "erpnext",
-    "url": "https://github.com/frappe/erpnext.git"
+    "url": "https://github.com/frappe/erpnext.git",
+	"tag": "v4-beta2"
   },{
     "name": "shopping_cart",
     "url": "https://github.com/frappe/shopping-cart.git"

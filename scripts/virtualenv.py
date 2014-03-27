@@ -2346,14 +2346,12 @@ def after_install(options, home_dir):
     app_names = [app['name'] for app in apps]
     os.chdir('apps')
     try:
-        # subprocess.check_output('/'.join([home_dir, 'bin', 'pip install --no-index --find-links=../virtualenv_support lxml']), shell=True)
-        if not os.path.exists('frappe'):
-            subprocess.check_output('git clone https://github.com/frappe/frappe.git --origin upstream', shell=True)
-        subprocess.check_output('/'.join([home_dir, 'bin', 'pip install -e frappe/ ']), shell=True)
-
         for app in apps:
             if not os.path.exists(app['name']):
                 subprocess.check_output('git clone {app_url} {app_name} --origin upstream'.format(app_url=app['url'], app_name=app['name']), shell=True)
+				tag = app.get('tag')
+				if tag:
+					subprocess.check_output('git reset --hard {tag}'.format(tag=tag), shell=True, cwd=os.path.abspath(app['name']))
             subprocess.check_output('/'.join([home_dir, 'bin', 'pip install -e {}/'.format(app['name'])]), shell=True)
     except subprocess.CalledProcessError, e:
         print "Error:", e.output
