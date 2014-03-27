@@ -7,9 +7,11 @@ absolute/relative path (eg, `./env/bin/frappe`).
 
 #### Pre requisites
 
-You will need some system packages
+* Add MariaDB repository from https://downloads.mariadb.org/mariadb/repositories/
+
+* Install packages
 ```
-sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mysql-server libmysqlclient-dev libxslt1.1 libxslt1-dev redis-server
+sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mariadb-server mariadb-common libmariadbclient-dev  libxslt1.1 libxslt1-dev redis-server
 ```
 
 #### Usage
@@ -34,7 +36,7 @@ cd frappe-bench
 ./env/bin/honcho start
 ```
 
-### Updating software
+### Updating
 
 ```
 ./scripts/update.sh
