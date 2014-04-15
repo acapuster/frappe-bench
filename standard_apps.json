@@ -10,6 +10,6 @@
   },{
     "name": "shopping_cart",
     "url": "https://github.com/frappe/shopping-cart.git",
-    "tag": "v4-beta2"
+    "tag": "v1-beta1"
   }
 ]
