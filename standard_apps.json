@@ -2,14 +2,14 @@
   {
     "name": "frappe",
     "url": "https://github.com/frappe/frappe.git",
-    "tag": "v4-beta2"
+    "tag": "4.0.0"
   },{
     "name": "erpnext",
     "url": "https://github.com/frappe/erpnext.git",
-    "tag": "v4-beta2"
+    "tag": "4.0.0"
   },{
     "name": "shopping_cart",
     "url": "https://github.com/frappe/shopping-cart.git",
-    "tag": "v1-beta1"
+    "tag": "v0.1.0"
   }
 ]
