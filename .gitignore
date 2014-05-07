@@ -1,4 +1,6 @@
 *.pyc
-src/*
+apps/*
+logs/*
+config/*
 sites/*
 env/*
