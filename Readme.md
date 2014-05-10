@@ -36,6 +36,12 @@ cd frappe-bench
 ./env/bin/honcho start
 ```
 
+### Default Login
+username: Administrator
+password: admin
+
+Please change this once you complete setup.
+
 ### Updating
 
 ```
