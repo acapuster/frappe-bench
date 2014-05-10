@@ -37,7 +37,9 @@ cd frappe-bench
 ```
 
 ### Default Login
+
 username: Administrator
+
 password: admin
 
 Please change this once you complete setup.
