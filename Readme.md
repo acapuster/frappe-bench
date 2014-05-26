@@ -11,10 +11,12 @@ absolute/relative path (eg, `./env/bin/frappe`).
 
 * Install packages
 ```
-sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mariadb-server mariadb-common libmariadbclient-dev  libxslt1.1 libxslt1-dev redis-server
+sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mariadb-server mariadb-common libmariadbclient-dev  libxslt1.1 libxslt1-dev redis-server libssl-dev libcrypto++-dev postfix
 ```
 
 #### Usage
+
+Note: Please do not run the following commands as root.
 
 ```
 git clone https://github.com/frappe/frappe-bench
