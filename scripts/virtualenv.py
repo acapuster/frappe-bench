@@ -2348,7 +2348,7 @@ def after_install(options, home_dir):
     try:
         for app in apps:
             if not os.path.exists(app['name']):
-                subprocess.check_output('git clone {app_url} {app_name} --branch master --origin upstream'.format(app_url=app['url'], app_name=app['name']), shell=True)
+                subprocess.check_output('git clone {app_url} {app_name} --origin upstream'.format(app_url=app['url'], app_name=app['name']), shell=True)
                 tag = app.get('tag')
                 if tag:
                     subprocess.check_output('git reset --hard {tag}'.format(tag=tag), shell=True, cwd=os.path.abspath(app['name']))
