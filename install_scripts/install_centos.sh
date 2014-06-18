@@ -13,6 +13,12 @@ gpgcheck=1
 " > /etc/yum.repos.d/mariadb.repo
 }
 
+read_msq_password() {
+	echo Enter mysql root password to set:
+	read -s MSQ_PASS
+	export $MSQ_PASS
+}
+
 add_ius_repo() {
 # HARDCODED!!!
 	wget http://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/epel-release-6-5.noarch.rpm
@@ -25,6 +31,8 @@ install_packages() {
 	yum groupinstall -y "Development tools"
 	yum install -y sudo yum install MariaDB-server MariaDB-client MariaDB-compat python-setuptools nginx zlib-devel bzip2-devel openssl-devel memcached postfix python27-devel python27 libxml2 libxml2-devel libxslt libxslt-devel redis MariaDB-devel
 	useradd -m -d /home/erpnext -s $SHELL erpnext
+	chmod o+x /home/erpnext
+	chmod o+r /home/erpnext
 }
 
 install_erpnext() {
@@ -44,7 +52,7 @@ install_supervisor() {
 	curl https://raw.githubusercontent.com/pdvyas/supervisor-initscripts/master/supervisord.conf > /etc/supervisord.conf
 	mkdir /etc/supervisor.d
 	chmod +x /etc/init.d/supervisord
-	service supervisord start
+	bash -c "service supervisord start || true"
 }
 
 start_services() {
@@ -64,15 +72,13 @@ configure_services() {
 }
 
 configure_mysql() {
-	echo Enter mysql root password \(you will have to enter this again later\):
-	read -s MSQ_PASS
 	mysqladmin -u root password $MSQ_PASS
 }
 
 link_config() {
 	ln -s  /home/erpnext/frappe-bench/config/nginx.conf /etc/nginx/conf.d/frappe.conf
 	ln -s  /home/erpnext/frappe-bench/config/supervisor.conf /etc/supervisor.d/frappe.conf
-	rm /etc/nginx/default.conf
+	rm /etc/nginx/conf.d/default.conf
 }
 
 reload_config() {
@@ -80,6 +86,7 @@ reload_config() {
 	service nginx reload
 }
 
+read_msq_password
 yum install wget -y
 add_ius_repo
 add_mariadb_repo
