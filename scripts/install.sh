@@ -74,6 +74,7 @@ then
         cp $SITE_PATH/site_config.json $SITES_PATH/$site/site_config.json
     fi
 
+    frappe --build --sites_path $SITES_PATH
     python scripts/3to4.py $site
     frappe --use $SINGLE_SITE_NAME --sites_path $SITES_PATH
 	python scripts/generate_config.py
