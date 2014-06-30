@@ -1,6 +1,5 @@
 from frappe.installer import add_to_installed_apps
 from frappe.cli import latest
-from frappe.website import rebuild_config
 from frappe.modules.patch_handler import executed
 import frappe
 import argparse
