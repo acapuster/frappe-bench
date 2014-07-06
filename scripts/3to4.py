@@ -20,9 +20,9 @@ def migrate(site):
 	validate(site)
 	frappe.init(site=site, sites_path=sites_path)
 	frappe.connect()
-	add_to_installed_apps('frappe', rebuild_sitemap=False)
-	add_to_installed_apps('erpnext', rebuild_sitemap=False)
-	add_to_installed_apps('shopping_cart', rebuild_sitemap=False)
+	add_to_installed_apps('frappe', rebuild_website=False)
+	add_to_installed_apps('erpnext', rebuild_website=False)
+	add_to_installed_apps('shopping_cart', rebuild_website=False)
 	latest()
 
 if __name__ == '__main__':
