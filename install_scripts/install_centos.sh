@@ -29,7 +29,7 @@ add_ius_repo() {
 
 install_packages() {
 	yum groupinstall -y "Development tools"
-	yum install -y sudo yum install MariaDB-server MariaDB-client MariaDB-compat python-setuptools nginx zlib-devel bzip2-devel openssl-devel memcached postfix python27-devel python27 libxml2 libxml2-devel libxslt libxslt-devel redis MariaDB-devel
+	yum install -y sudo yum install MariaDB-server MariaDB-client MariaDB-compat python-setuptools nginx zlib-devel bzip2-devel openssl-devel memcached postfix python27-devel python27 libxml2 libxml2-devel libxslt libxslt-devel redis MariaDB-devel wkhtmltopdf
 	useradd -m -d /home/erpnext -s $SHELL erpnext
 	chmod o+x /home/erpnext
 	chmod o+r /home/erpnext
