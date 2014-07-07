@@ -69,6 +69,7 @@ configure_services() {
 	chkconfig mysql on
 	chkconfig nginx on
 	chkconfig supervisord on
+	echo "erpnext ALL=(ALL) NOPASSWD: /usr/bin/supervisorctl restart frappe\:" > /etc/sudoers.d/erpnext
 }
 
 configure_mysql() {
