@@ -11,7 +11,7 @@ sudo add-apt-repository 'deb http://download.nus.edu.sg/mirror/mariadb/repo/5.5/
 sudo apt-get update
 
 # install system deps
-sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mariadb-server mariadb-common libmariadbclient-dev  libxslt1.1 libxslt1-dev redis-server libssl-dev libcrypto++-dev postfix supervisor nginx -y wkhtmltopdf
+sudo apt-get install python-dev build-essential python-mysqldb git memcached ntp vim screen htop mariadb-server mariadb-common libmariadbclient-dev  libxslt1.1 libxslt1-dev redis-server libssl-dev libcrypto++-dev postfix supervisor nginx -y
 useradd -m -d /home/erpnext -s $SHELL erpnext
 
 su erpnext -c "cd /home/erpnext && git clone https://github.com/frappe/frappe-bench"
