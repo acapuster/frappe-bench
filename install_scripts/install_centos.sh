@@ -33,6 +33,8 @@ install_packages() {
 	useradd -m -d /home/erpnext -s $SHELL erpnext
 	chmod o+x /home/erpnext
 	chmod o+r /home/erpnext
+	wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-centos6-amd64.rpm
+	rpm -Uvh wkhtmltox-0.12.1_linux-centos6-amd64.rpm
 }
 
 install_erpnext() {
