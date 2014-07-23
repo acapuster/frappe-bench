@@ -2,7 +2,9 @@
 
 Please use the new [Frappe Bench](https://github.com/frappe/bench)
 
-## Frappe bench
+---
+
+## Frappe bench (Archived)
 
 This repository helps you setup an isolated environment (bench) to run and
 develop ERPNext. A virtualenv is installed in the env directory. You can
