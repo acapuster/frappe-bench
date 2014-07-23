@@ -1,3 +1,7 @@
+## Warning: Deprecated
+
+Please use the new [Frappe Bench](https://github.com/frappe/bench)
+
 ## Frappe bench
 
 This repository helps you setup an isolated environment (bench) to run and
